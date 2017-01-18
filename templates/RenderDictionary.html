@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="DictionaryStyle.css"/>
+<!--    <style>
+        body {
+            padding: 1.0em;
+        }
+        th {
+            color: brown;
+            font-family: "Times New Roman", serif;
+        }
+        .letter-head {
+            color: green;
+            font-family: "Hoefler Text", serif;
+        }
+        .postposition {
+            color: rgb(153, 0, 0);
+            font-style: italic;
+            font-size: 10pt;
+            font-family: Georgia, serif;
+        }
+        .tragen-word {
+            color: blue;
+            font-style: italic;
+            font-family: Baskerville, serif;
+        }
+        .tragen-affix {
+            color: rgb(255, 102, 0);
+            font-style: italic;
+            font-size: 10pt;
+            font-family: Georgia, serif;
+        }
+        .type-gender {
+            font-size: 0.9em;
+            font-family: "American Typewriter", serif;
+        }
+    </style> -->
+    <title>Trägen Dictionary</title>
+</head>
+<body>
+<header>
+<nav style="background-color: beige;text-align: center">
+{% for letter, _ in words.items() %}
+    <a class="letter-head" style="font-size: 20px" href="#{{ letter.upper() }}">{{ letter.upper() }}</a>&ensp;
+{% endfor %}
+</nav>
+</header>
+<div>
+<meter value="{{ num_defs }}" min="0" max="100000"></meter>
+</div>
+{% for letter, wds in words.items() %}
+    <h3 id="{{ letter.upper() }}" class="letter-head">{{ letter.upper() }}</h3>
+    <table>
+    <!--
+        <tr>
+            <th>Trägen word</th>
+            <th>Gender/Type</th>
+            <th>Definition</th>
+            <th>Etymology</th>
+        </tr>
+    -->
+    {% for id, text, gender, definition, etymology in wds %}
+        <tr id={{ id }}>
+            <td class="tragen-word">{{ text }}</td>
+            <td class="type-gender">{{ gender }}</td>
+            <td>{{ definition }}</td>
+            {% if etymology is not none %}
+                {% for kind, ref, text in etymology -%}
+                    <td><a class="{{ type_styles[kind] }}" href="{{ ref }}">{{ text }}</a>&ensp;</td>
+                {%-  endfor %}
+            {% endif %}
+        </tr>
+    {%  endfor %}
+    </table>
+{% endfor %}
+<footer>
+<details>
+    <summary>Copyright 2015-2016</summary>
+    <p> - by Edward Minnix</p>
+    <p>All content may be freely used with written permission from the author(s).</p>
+</details>
+</footer>
+</body>
+</html>

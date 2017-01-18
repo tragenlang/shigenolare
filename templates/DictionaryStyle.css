@@ -1,0 +1,32 @@
+body {
+    padding: 1.0em;
+}
+th {
+    color: brown;
+    font-family: "Times New Roman", serif;
+}
+.letter-head {
+    color: green;
+    font-family: "Hoefler Text", serif;
+}
+.postposition {
+    color: rgb(153, 0, 0);
+    font-style: italic;
+    font-size: 10pt;
+    font-family: Georgia, serif;
+}
+.tragen-word {
+    color: blue;
+    font-style: italic;
+    font-family: Baskerville, serif;
+}
+.tragen-affix {
+    color: rgb(255, 102, 0);
+    font-style: italic;
+    font-size: 10pt;
+    font-family: Georgia, serif;
+}
+.type-gender {
+    font-size: 0.9em;
+    font-family: "American Typewriter", serif;
+}

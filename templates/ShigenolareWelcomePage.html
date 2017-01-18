@@ -1,0 +1,53 @@
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Šigënolare</title>
+        <style>
+        body {
+            background-color: rgb(201, 250, 255);
+        }
+        h1 {
+            color: rgb(217, 39, 60);
+            background-color: rgb(194, 202, 255);
+            text-align: center;
+        }
+        h2 {
+            color: rgb(24, 130, 72);
+            font-family: "Iowan Old Style", "Times", serif;
+        }
+        .section-list {
+            color: rgb(252, 5, 83);
+        }
+           #content-list {
+               background-color: rgb(191, 191, 191);
+               color: rgb(252, 5, 83);
+               font-family: "Baskerville", "Times", serif;
+           }
+        a {
+            color: rgb(252, 5, 83);
+        }
+        #word-tragen {
+            color: red;
+        }
+        </style>
+    </head>
+<body>
+    <h1 id="header"> Welcome to <i>Šigënolare</i>:<br>The Official Trägen-teaching Site </h1>
+    <h2><i><span style="text-decoration: underline">What is Trägen?</span></i></h2>
+    <p><span id="word-tragen">Trägen</span> is a conlang invented by E. R. Minnix III when he was in his late teens. Its people are known as either the <i><b>Tra</b></i>, the <i><b>Trahuli</b></i>, or the <i><b>Träpéndi</b></i> (the name <i><b>Trägen</b></i> is derived from the name <i><b>Tra</b></i> and the word <i><b>geno</b></i>, meaning <i>language</i>). It is an agglutinative language with a morphology full of semantic affixes and compounds.</p>
+    <h2><span style="text-decoration: underline">Šigënolare is the only place where one can find the information necessary for learning Trägen</span></h2>
+<p> <i><b>Šigënolare</b></i> (Trägen for <i>place for the language teacher</i>) is a website designed by the creator of Trägen himself in order to let others learn his language. </p>
+    <p> Trägen is a language with a grammar unlike that of English, and <b>so can be kind of odd for English speakers to learn</b>.
+        Trägen is an agglutinative language, meaning it tends to "glue" things together in order to form new words. (e.g., <i><b>šigënolare</b></i> is derived from the roots <i><b>ši-</b></i>, <i>place</i>; <i><b>geno</b></i>, <i>language</i>; and <i><b>lare</b></i>, <i> to teach, teacher, &c.</i>)
+    </p>
+    <ul id="content-list">
+        <!-- This table of contents is for links which will lead to various parts of the site -->
+        <h3><span style="text-decoration:underline">Contents</span></h3>
+        {% for name, (_, message) in section_files.items() %}
+            <li class="section-list"><a href="{{ name }}">{{ message }}</a></li>
+        {% endfor %}
+    </ul>
+    
+<p>For more information, email <a href="mailto:roy.ed@comcast.net?Subject=Tragen%20Question">roy.ed@comcast.net</a>.</p>
+    </body>
+</html>
